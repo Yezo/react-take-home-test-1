@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react"
+import { apiFetchAllContacts, IContact } from "./data/contacts"
+
 import AddContact from "./components/AddContact/AddContact"
 import ContactList from "./components/ContactList/ContactList"
 import EditContact from "./components/EditContact/EditContact"
-import { apiFetchAllContacts, IContact } from "./data/contacts"
+
 import "./App.css"
 
 export default function App() {
+  //States
   const [contacts, setContacts] = useState<IContact[]>([])
   const [error, setError] = useState<boolean>(false)
   const [toggleAddPanel, setToggleAddPanel] = useState<boolean>(false)
@@ -22,7 +25,6 @@ export default function App() {
   //BUG: attempting to add a loading state always ends up TRUE and cant be set back to FALSE
   useEffect(() => {
     const controller = new AbortController()
-
     const fetchAPI = async () => {
       try {
         const data = await apiFetchAllContacts()

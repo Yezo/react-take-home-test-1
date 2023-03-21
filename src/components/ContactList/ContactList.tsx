@@ -1,22 +1,24 @@
 import React from "react"
 import { apiDeleteContact, IContact } from "../../data/contacts"
+
 import "./ContactList.css"
 
 interface IProps {
-  contacts: IContact[]
   setContactInfo: React.Dispatch<React.SetStateAction<IContact>>
+  setToggleAddPanel: React.Dispatch<React.SetStateAction<boolean>>
   setToggleEditPanel: React.Dispatch<React.SetStateAction<boolean>>
   toggleEditPanel: boolean
-  setToggleAddPanel: React.Dispatch<React.SetStateAction<boolean>>
+  contacts: IContact[]
 }
 
 export default function ContactList({
-  contacts,
   setContactInfo,
+  setToggleAddPanel,
   setToggleEditPanel,
   toggleEditPanel,
-  setToggleAddPanel,
+  contacts,
 }: IProps) {
+  //Helper functions
   const handleEdit = (id: string) => {
     let contact = contacts.filter((item) => item.id === id)
     setContactInfo(contact[0])
@@ -26,7 +28,8 @@ export default function ContactList({
 
   const handleDelete = async (id: string) => {
     let contact = contacts.filter((item) => item.id === id)
-    await apiDeleteContact(contact[0].id)
+    let contactID = contact[0].id
+    await apiDeleteContact(contactID)
   }
 
   return (

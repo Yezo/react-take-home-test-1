@@ -1,23 +1,25 @@
 import { useState } from "react"
 import { apiAddContact, IContact } from "../../data/contacts"
 import { generateUUID } from "../../util/guid"
+
 import Form from "../Form/Form"
+
 import "./AddContact.css"
 
 interface IProps {
   setContactInfo: React.Dispatch<React.SetStateAction<IContact>>
   setToggleAddPanel: React.Dispatch<React.SetStateAction<boolean>>
+  toggleAddPanel: boolean
   contacts: IContact[]
   contactInfo: IContact
-  toggleAddPanel: boolean
 }
 
 export default function AddContact({
-  contacts,
-  contactInfo,
   setContactInfo,
   setToggleAddPanel,
   toggleAddPanel,
+  contacts,
+  contactInfo,
 }: IProps) {
   //States
   const [error, setError] = useState<boolean>(false)
@@ -27,7 +29,7 @@ export default function AddContact({
     e.preventDefault()
     const id = generateUUID()
 
-    //Check if the contact's name the user is trying to add matches any contacts stored in localStorage
+    //Check if the contact's name matches any contacts stored in database
     const existingByName = contacts.find(
       (x) => x.name.toLowerCase() === contactInfo.name.toLowerCase()
     )
@@ -48,8 +50,7 @@ export default function AddContact({
         id: "",
       })
 
-      //TODO can get rid of this after implementing panel toggling
-      setError(false)
+      //Close the add contact panel to avoid confusion
       setToggleAddPanel(!toggleAddPanel)
     }
   }

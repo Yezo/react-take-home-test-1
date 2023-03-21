@@ -2,8 +2,8 @@ import { apiUpdateContact, IContact } from "../../data/contacts"
 import Form from "../Form/Form"
 
 type Props = {
-  setToggleEditPanel: React.Dispatch<React.SetStateAction<boolean>>
   setContactInfo: React.Dispatch<React.SetStateAction<IContact>>
+  setToggleEditPanel: React.Dispatch<React.SetStateAction<boolean>>
   toggleEditPanel: boolean
   contactInfo: IContact
 }
@@ -11,8 +11,8 @@ type Props = {
 export default function EditContact({
   setContactInfo,
   setToggleEditPanel,
-  contactInfo,
   toggleEditPanel,
+  contactInfo,
 }: Props) {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()

@@ -1,0 +1,34 @@
+.table-header {
+  padding: 10px;
+  min-width: 6rem;
+  background: black;
+  color: white;
+}
+
+.table-cell {
+  padding: 10px;
+}
+
+.btn-delete {
+  background: #e53030;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid black;
+  appearance: none;
+  color: white;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-edit {
+  background: #3398ea;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid black;
+  appearance: none;
+  color: white;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

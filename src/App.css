@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  letter-spacing: -0.025em;
+  gap: 10px;
+}
+
+.main-title {
+  font-weight: bold;
+}
+
+.warning-message-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.warning-message-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: #3398ea;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 1px solid black;
+  appearance: none;
+  color: white;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+}

@@ -1,0 +1,33 @@
+.form-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  gap: 1rem;
+  background: #3a3535;
+  color: white;
+  padding: 2rem 2rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+
+  font-weight: bold;
+}
+
+.btn-submit {
+  background: #3398ea;
+  padding: 5px 10px;
+  outline: none;
+  border: 1px solid black;
+  appearance: none;
+  color: white;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
